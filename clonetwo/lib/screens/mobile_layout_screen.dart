@@ -2,8 +2,8 @@ import 'package:clonetwo/colors.dart';
 import 'package:clonetwo/widgets/contacts_list.dart';
 import 'package:flutter/material.dart';
 
-class MobileScreenLayout extends StatelessWidget {
-  const MobileScreenLayout({super.key});
+class MobileLayoutScreen extends StatelessWidget {
+  const MobileLayoutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,26 +11,28 @@ class MobileScreenLayout extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: appBarColor,
           elevation: 0,
-          title: Text(
+          backgroundColor: appBarColor,
+          centerTitle: false,
+          title: const Text(
             'WhatsApp',
             style: TextStyle(
-              color: Colors.grey,
               fontSize: 20,
+              color: Colors.grey,
               fontWeight: FontWeight.bold,
             ),
           ),
-          centerTitle: false,
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
             IconButton(
+              icon: const Icon(Icons.search, color: Colors.grey),
               onPressed: () {},
-              icon: Icon(Icons.more_vert, color: Colors.grey),
+            ),
+            IconButton(
+              icon: const Icon(Icons.more_vert, color: Colors.grey),
+              onPressed: () {},
             ),
           ],
-
-          bottom: TabBar(
+          bottom: const TabBar(
             indicatorColor: tabColor,
             indicatorWeight: 4,
             labelColor: tabColor,
@@ -39,7 +41,12 @@ class MobileScreenLayout extends StatelessWidget {
             tabs: [Tab(text: 'CHATS'), Tab(text: 'STATUS'), Tab(text: 'CALLS')],
           ),
         ),
-        body: ContactsList(),
+        body: const ContactsList(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: tabColor,
+          child: const Icon(Icons.comment, color: Colors.white),
+        ),
       ),
     );
   }

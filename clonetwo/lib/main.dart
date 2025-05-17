@@ -1,7 +1,7 @@
 import 'package:clonetwo/colors.dart';
-import 'package:clonetwo/responsive/responsive_layout.dart';
-import 'package:clonetwo/screens/mobile_screen_layout.dart';
-import 'package:clonetwo/screens/web_screen_layout.dart';
+import 'package:clonetwo/screens/mobile_layout_screen.dart';
+import 'package:clonetwo/screens/web_layout_screen.dart';
+import 'package:clonetwo/utils/responsive_layout.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'WhatsApp UI',
+      title: 'Whatsapp UI',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
-      home: ResponsiveLayout(
-        mobilescreenLayout: MobileScreenLayout(),
-        webScreenLayout: WebScreenLayout(),
+      home: const ResponsiveLayout(
+        mobileScreenLayout: MobileLayoutScreen(),
+        webScreenLayout: WebLayoutScreen(),
       ),
     );
   }
